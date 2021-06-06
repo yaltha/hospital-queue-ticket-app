@@ -5,7 +5,7 @@ import { Icon } from 'react-native-elements'
 interface ButtonProps {
     btnStyles?: {}
     textStyle?: {}
-    iconStyle?: {}
+    btnIconStyle?: {}
     text: string
     iconType: string
     iconName: string
@@ -15,7 +15,7 @@ interface ButtonProps {
 const Button: React.FC<ButtonProps> = ({
     btnStyles,
     textStyle,
-    iconStyle,
+    btnIconStyle,
     text,
     iconName,
     iconType,
@@ -25,7 +25,11 @@ const Button: React.FC<ButtonProps> = ({
         <TouchableOpacity
             style={[btnStyles, styles.defaultStyle]}
             onPress={onPress}>
-            <Icon type={iconType} name={iconName} style={iconStyle} />
+            <Icon
+                type={iconType}
+                name={iconName}
+                iconStyle={btnIconStyle}
+            />
             <Text style={[textStyle, styles.textDefault]}>{text}</Text>
         </TouchableOpacity>
     )
@@ -38,9 +42,6 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "center",
         alignContent: "center",
-        // backgroundColor: "#ffc100",
-        // borderRadius: 50,
-        marginVertical: 10,
 
         shadowColor: "#000",
         shadowOffset: {
@@ -55,6 +56,6 @@ const styles = StyleSheet.create({
         marginLeft: 10,
         textTransform: 'uppercase',
         fontWeight: "bold",
-        
-    }
+    },
+
 })

@@ -1,18 +1,36 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import { Button } from '../components/'
+import { Button } from '../components'
 
 const Home = () => {
     return (
-        <View style={styles.homeContainer}>
-            <Text style={styles.headerText}>WELCOME TO HOSPITAL QUEUE TICKET</Text>
+        <View>
+            {/* <Text>Home</Text> */}
             <Button
-                text="get started"
-                btnStyles={styles.btnStarted}
-                textStyle={styles.btnTextStarted}
-                iconStyle={styles.btnIconStyle}
+                text="get a ticket"
+                btnStyles={styles.btnGetTicket}
+                textStyle={styles.btnTextGetTicket}
+                btnIconStyle={styles.btnIconStyle}
                 iconType="font-awesome-5"
-                iconName="angle-double-right"
+                iconName="ticket-alt"
+            // onPress={() => navigation.navigate("")}
+            />
+            <Button
+                text="terms and conditions"
+                btnStyles={styles.btnTAS}
+                textStyle={styles.btnTextTAS}
+                btnIconStyle={styles.btnIconStyle}
+                iconType="font-awesome-5"
+                iconName="newspaper"
+            // onPress={() => navigation.navigate("")}
+            />
+            <Button
+                text="about"
+                btnStyles={styles.btnAbout}
+                textStyle={styles.btnTextAbout}
+                btnIconStyle={styles.btnIconStyle}
+                iconType="font-awesome-5"
+                iconName="question-circle"
             // onPress={() => navigation.navigate("")}
             />
         </View>
@@ -22,31 +40,26 @@ const Home = () => {
 export default Home
 
 const styles = StyleSheet.create({
-    homeContainer: {
-        display: 'flex',
-        // justifyContent: 'space-between',
-        alignItems: 'center',
-    },
-    headerText: {
-        fontSize: 30,
-        fontWeight: 'bold',
-        color: "#0AD7D7",
-        width: 215,
-        
-    },
-    btnStarted: {
-        width: 200,
-        height: 100,
-        backgroundColor: '#56CCF2',
+    btnGetTicket: {
+        width: 328,
+        height: 150,
+        backgroundColor: '#fafafa',
         borderRadius: 15,
+        alignSelf: 'center',
+        paddingVertical: 65,
+        marginVertical: 30
     },
-    btnTextStarted: {
-        fontSize: 18,
-        color: "#E1FEFE",
-        justifyContent: "center",
-        alignContent: "center",
+    btnTAS: {
+        width: 328,
+        height: 70,
+        backgroundColor: '#fafafa',
+        borderRadius: 15,
+        alignSelf: 'center',
+        paddingVertical: 25,
+        marginVertical: 10
     },
-    btnIconStyle: {
-        color: "#E1FEFE",
-    },
+    btnAbout: {
+        marginVertical: 10
+
+    }
 })
