@@ -34,7 +34,7 @@ const Home = () => {
             // onPress={() => navigation.navigate("")}
             />
         </View>
-    )   
+    )
 }
 
 export default Home
@@ -49,6 +49,8 @@ const styles = StyleSheet.create({
         paddingVertical: 65,
         marginVertical: 30
     },
+    btnTextGetTicket: {},
+    btnIconStyle: {},
     btnTAS: {
         width: 328,
         height: 70,
@@ -58,8 +60,10 @@ const styles = StyleSheet.create({
         paddingVertical: 25,
         marginVertical: 10
     },
+    btnTextTAS: {},
     btnAbout: {
         marginVertical: 10
 
-    }
+    },
+    btnTextAbout: {}
 })

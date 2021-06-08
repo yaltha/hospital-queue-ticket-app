@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import Started from './screens/Started'
 import Home from './screens/Home'
 import Form from './screens/Form';
+import TicketSummary from './screens/TicketSummary';
 
 export default function App() {
   return (
@@ -11,7 +12,8 @@ export default function App() {
       <StatusBar style="auto" />
       {/* <Started /> */}
       {/* <Home /> */}
-      <Form />
+      {/* <Form /> */}
+      <TicketSummary />
     </View>
   );
 }
