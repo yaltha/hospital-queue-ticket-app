@@ -1,11 +1,28 @@
 import React from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import { Button, Input } from '../components'
+import { Button, Input } from '../../components'
 
-const Form = () => {
+import { StackNavigationProp } from '@react-navigation/stack'
+import { TopNavigatorParamsList } from '../../types'
+
+interface FormProps {
+    navigation: StackNavigationProp<TopNavigatorParamsList>
+}
+
+const Form: React.FC<FormProps> = ({ navigation }) => {
     return (
-        <View>
-            <Text>Form Data</Text>
+        <View
+            style={{
+                flex: 1,
+                justifyContent: 'center',
+                alignItems: 'center'
+            }}
+        >
+            <Text style={{
+                alignSelf: 'flex-start',
+                marginLeft: 10
+            }}
+            >Form Data</Text>
             <Input labelText="Name" placeholder="your name..." keyboardType="default" />
             <Input labelText="Age" placeholder="your age..." keyboardType="number-pad" />
             <Input labelText="Clinic" placeholder="which clinic do you want to see..." keyboardType="default" />
@@ -20,7 +37,8 @@ const Form = () => {
                 iconType="font-awesome-5"
                 textStyle={styles.btnTextStyle}
                 btnIconStyle={styles.iconStyles}
-            // onPress
+                onPress={() => navigation.navigate("TicketSummary")}
+
             />
         </View>
     )

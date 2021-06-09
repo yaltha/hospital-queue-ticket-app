@@ -1,12 +1,17 @@
 import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
-import { Button } from '../components'
+import { Button } from '../../components'
 import { Icon } from 'react-native-elements'
 
 const TicketSummary = () => {
     return (
-        <View >
-            <Text>Ticket Summary</Text>
+        <View
+            style={{
+                flex: 1,
+                justifyContent: 'center',
+                alignItems: 'center'
+            }}
+        >
             <View style={{
                 alignItems: 'center',
                 marginVertical: 20
@@ -81,7 +86,7 @@ const TicketSummary = () => {
                     </View>
                 </View>
                 <Image
-                    source={require('../assets/qr-code.jpg')}
+                    source={require('../../assets/qr-code.jpg')}
                     style={{
                         width: 195,
                         height: 195,

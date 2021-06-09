@@ -1,11 +1,25 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import { Button } from '../components/'
+import { Button } from '../../components'
+import defaultScreen from '../../config/defaultScreen'
 
-const Home = () => {
+import { StackNavigationProp } from '@react-navigation/stack'
+import { TopNavigatorParamsList } from '../../types'
+
+interface HomeProps {
+    navigation: StackNavigationProp<TopNavigatorParamsList>
+}
+
+const Home: React.FC<HomeProps> = ({ navigation }) => {
     return (
-        <View>
-            {/* <Text>Home</Text> */}
+        <View
+            style={{
+                flex: 1,
+                justifyContent: 'center',
+                alignItems: 'center'
+            }}
+        // style={defaultScreen}
+        >
             <Button
                 text="get a ticket"
                 btnStyles={styles.btnGetTicket}
@@ -13,7 +27,7 @@ const Home = () => {
                 btnIconStyle={styles.btnIconStyle}
                 iconType="font-awesome-5"
                 iconName="ticket-alt"
-            // onPress={() => navigation.navigate("")}
+                onPress={() => navigation.navigate("Form")}
             />
             <Button
                 text="terms and conditions"
@@ -49,8 +63,13 @@ const styles = StyleSheet.create({
         paddingVertical: 65,
         marginVertical: 30
     },
-    btnTextGetTicket: {},
-    btnIconStyle: {},
+    btnTextGetTicket: {
+        color: '#0AD7D7',
+        fontSize: 16
+    },
+    btnIconStyle: {
+        color: '#0AD7D7',
+    },
     btnTAS: {
         width: 328,
         height: 70,
@@ -60,10 +79,15 @@ const styles = StyleSheet.create({
         paddingVertical: 25,
         marginVertical: 10
     },
-    btnTextTAS: {},
+    btnTextTAS: {
+        color: '#0AD7D7',
+        fontSize: 16
+    },
     btnAbout: {
         marginVertical: 10
-
     },
-    btnTextAbout: {}
+    btnTextAbout: {
+        color: '#0AD7D7',
+        fontSize: 16
+    }
 })

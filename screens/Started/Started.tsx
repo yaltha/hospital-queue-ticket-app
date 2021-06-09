@@ -1,11 +1,26 @@
 import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
-import { Button } from '../components'
+import { Button } from '../../components'
+import defaultScreen from '../../config/defaultScreen'
 
-const Started = () => {
+import { StackNavigationProp } from '@react-navigation/stack'
+import { TopNavigatorParamsList } from '../../types'
+
+interface StartedProps {
+    navigation: StackNavigationProp<TopNavigatorParamsList>
+}
+
+const Started: React.FC<StartedProps> = ({ navigation }) => {
     return (
-        <View style={styles.homeContainer}>
-            <Image style={styles.hospitalImg} source={require('../assets/hospital.jpg')} />
+        <View
+            // style={defaultScreen}
+            style={{
+                flex: 1,
+                justifyContent: 'center',
+                alignItems: 'center'
+            }}
+        >
+            <Image style={styles.hospitalImg} source={require('../../assets/hospital.jpg')} />
             <Text style={styles.headerText}>welcome to hospital queue ticket</Text>
             <Button
                 text="get started"
@@ -14,7 +29,7 @@ const Started = () => {
                 btnIconStyle={styles.btnIconStyle}
                 iconType="font-awesome-5"
                 iconName="angle-double-right"
-            // onPress={() => navigation.navigate("")}
+                onPress={() => navigation.navigate("Home")}
             />
         </View>
     )
